@@ -45,7 +45,7 @@ Point fun2()
 }
 int main(void)
 {
-	Point a(4,5);
+	Point a(4,5);//
 	Point b(a);  //用a初始化b
 	cout << b.getX() << endl;
 	fun1(b);  //对象b作为fun1的实参
