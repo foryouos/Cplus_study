@@ -18,7 +18,6 @@ A::A(int i) :a(i)  //写入初始化列表
 
 
 
-
 int main(void)
 {
 	R a(5, 4);
