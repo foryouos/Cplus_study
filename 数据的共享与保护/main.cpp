@@ -1,39 +1,55 @@
 #include <iostream>
 //C++标准程序库的所有标识符都被声明在std命名空间内
 using namespace std;
-int i =1; //i为全局变量
-void other()
+class Point
 {
-	//a,b为静态全局变量，具有全局寿命，局部可见，只第一次进入函数时被初始化
-	static int a = 2;
-	static int b;
-	//c为局部变量
-	int c = 10;
-	a += 2;  //4
-	i += 32; //33
-	c += 5;  //15
-	cout << "---- - other----" << endl;
-	cout << " i：" << i << " a:" << a << " b:" << b << " c" << c << endl;
-}
+public: //外部接口
+	Point(int x = 0, int y = 0):x(x), y(x) //析构函数
+	{
+		//在构造函数中对cout累加，所有对象共同共同维护一个count
+		count++;
+	}
+	Point(Point& p) //复制构造函数
+	{
+		x = p.x;
+		y = p.y;
+		count++;
+	}
+	~Point()  //析构函数
+	{
+		count--;
+	}
+	int getX()
+	{
+		return x;
+	}
+	int getY()
+	{
+		return y;
+	}
+	static void showCount()  //静态函数成员，主函数可以直接调用查看count
+	{
+		cout << " Object count:" << count << endl;
+	}
+private:
+	int x, y;
+	static int count;  //静态数据成员声明，用于记录点的个数
+};
+int Point::count = 0;//静态数据成员定义和初始化，使用类名限定
 int main(void)
 {
+	Point::showCount(); //输出对象个数
+	Point a(4, 5);
+	cout << "Point A:" << a.getX() << "," << a.getY();
+	a.showCount();//输出对象个数
 
-	//a为静态局部变量，具有全局 寿命，局部可见
-	static int a;
-	//b,c为局部变量，具有动态生存期
-	int b = -10;
-	int c = 0;
-	cout << "——----main----" << endl;
-	//i=1,a默认为0，b=-10,c=0
-	cout << " i：" << i << " a:" << a << " b:" << b << " c" << c << endl;
-	c += 8;  //c=8
-
-	other();
-
-	cout << "——----main----" << endl;
-	cout << " i：" << i << " a:" << a << " b:" << b << " c" << c << endl;
-	i += 10;
-	other();
-
+	Point b(a);
+	cout << "Point B:" << b.getX() << "," << b.getY();
+	b.showCount();//输出对象个数
 	return 0;
 }
+/*
+* 输出：
+Point A:4,4 Object count:1
+Point B:4,4 Object count:2
+*/
