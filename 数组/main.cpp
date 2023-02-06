@@ -30,13 +30,14 @@ int main(void)
 	cout << "Exiting main..." << endl;
 	return 0;
 }
+
 /*
 * Entering main...
-Default Constructor called.
-Default Constructor called.
-Moving the point to(10,20)
-Moving the point to(11,21)
-Exiting main...
-Destructor called
-Destructor called
+* Default Constructor called.
+* Default Constructor called.
+* Moving the point to(10,20)
+* Moving the point to(11,21)
+* Exiting main...
+* Destructor called
+* Destructor called
 */
