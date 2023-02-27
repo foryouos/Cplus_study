@@ -1,6 +1,6 @@
 echo "Start auto deploy "
 git add .
-git commit -m "整合代码"
+git commit -m “添加郝斌C和部分C++代码”
 git push
 
 echo "Finish"
