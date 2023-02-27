@@ -1,6 +1,6 @@
 echo "Start auto deploy "
 git add .
-git commit -m “广义表和次方”
+git commit -m “输入与输出”
 git push
 
 echo "Finish"
