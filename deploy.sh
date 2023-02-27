@@ -1,6 +1,7 @@
 echo "Start auto deploy "
 git add .
-git commit -m “输入与输出”
+read -p "请输入commit 信息:\t" title
+git commit -m "$title"
 git push
 
 echo "Finish"
