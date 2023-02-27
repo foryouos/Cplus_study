@@ -1,6 +1,6 @@
 echo "Start auto deploy "
 git add .
-git commit -m “汉诺塔可视化”
+git commit -m “广义表和次方”
 git push
 
 echo "Finish"
