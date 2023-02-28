@@ -6,8 +6,8 @@ int main(void)
 	for (int i = 0; i < 5; i++)
 	{
 		//使用width控制输出宽度
-		cout.width(10); //影响其后的输出项
-		cout << values[i] << endl;
+		//每个字符10个字节
+		cout.width(10); //影响其后的输出项，只影响一个
 	}
 	return 0;
 }
