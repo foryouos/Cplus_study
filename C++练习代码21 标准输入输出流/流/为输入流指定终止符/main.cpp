@@ -1,3 +1,7 @@
+/*
+为输入流指定一个终止字符
+*/
+
 #include <iostream>
 #include <string>
 using namespace std;

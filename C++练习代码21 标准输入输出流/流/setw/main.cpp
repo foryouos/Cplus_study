@@ -39,7 +39,7 @@ int main(void)
 	{
 		cout << setiosflags(ios_base::left) //左对齐
 			<< setw(6) << names[i]
-			<< resetiosflags(ios_base::left)//清楚左对齐设置
+			<< resetiosflags(ios_base::left)//清除左对齐设置
 			<< setw(10) << setprecision(1) << values[i]
 			<< endl;
 	}

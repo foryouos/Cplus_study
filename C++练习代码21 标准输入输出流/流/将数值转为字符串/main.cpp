@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 /*
-函数模版toString可以将各种支持"<<"插入符类型的额对象转换为字符串
+函数模版toString可以将·各种支持·"<<"插入符类型的额对象转换为字符串
 */
 template <class T>
 inline string toString(const T& v)
