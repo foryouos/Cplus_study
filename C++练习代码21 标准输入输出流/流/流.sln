@@ -25,6 +25,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "读入一个文件并显示
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "用istringstream将字符串转换为数值", "用istringstream将字符串转换为数值\用istringstream将字符串转换为数值.vcxproj", "{2179662E-3E78-4F23-B882-BF3BA932F71C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "练习：写入文件，并将文件读出", "练习：写入文件，并将文件读出\练习：写入文件，并将文件读出.vcxproj", "{390999F0-D8DE-48BA-9078-F21DEB720799}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "读取html信息", "读取html信息\读取html信息.vcxproj", "{48FC46D7-22A4-4A89-A550-9252EE4303B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +125,22 @@ Global
 		{2179662E-3E78-4F23-B882-BF3BA932F71C}.Release|x64.Build.0 = Release|x64
 		{2179662E-3E78-4F23-B882-BF3BA932F71C}.Release|x86.ActiveCfg = Release|Win32
 		{2179662E-3E78-4F23-B882-BF3BA932F71C}.Release|x86.Build.0 = Release|Win32
+		{390999F0-D8DE-48BA-9078-F21DEB720799}.Debug|x64.ActiveCfg = Debug|x64
+		{390999F0-D8DE-48BA-9078-F21DEB720799}.Debug|x64.Build.0 = Debug|x64
+		{390999F0-D8DE-48BA-9078-F21DEB720799}.Debug|x86.ActiveCfg = Debug|Win32
+		{390999F0-D8DE-48BA-9078-F21DEB720799}.Debug|x86.Build.0 = Debug|Win32
+		{390999F0-D8DE-48BA-9078-F21DEB720799}.Release|x64.ActiveCfg = Release|x64
+		{390999F0-D8DE-48BA-9078-F21DEB720799}.Release|x64.Build.0 = Release|x64
+		{390999F0-D8DE-48BA-9078-F21DEB720799}.Release|x86.ActiveCfg = Release|Win32
+		{390999F0-D8DE-48BA-9078-F21DEB720799}.Release|x86.Build.0 = Release|Win32
+		{48FC46D7-22A4-4A89-A550-9252EE4303B6}.Debug|x64.ActiveCfg = Debug|x64
+		{48FC46D7-22A4-4A89-A550-9252EE4303B6}.Debug|x64.Build.0 = Debug|x64
+		{48FC46D7-22A4-4A89-A550-9252EE4303B6}.Debug|x86.ActiveCfg = Debug|Win32
+		{48FC46D7-22A4-4A89-A550-9252EE4303B6}.Debug|x86.Build.0 = Debug|Win32
+		{48FC46D7-22A4-4A89-A550-9252EE4303B6}.Release|x64.ActiveCfg = Release|x64
+		{48FC46D7-22A4-4A89-A550-9252EE4303B6}.Release|x64.Build.0 = Release|x64
+		{48FC46D7-22A4-4A89-A550-9252EE4303B6}.Release|x86.ActiveCfg = Release|Win32
+		{48FC46D7-22A4-4A89-A550-9252EE4303B6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
