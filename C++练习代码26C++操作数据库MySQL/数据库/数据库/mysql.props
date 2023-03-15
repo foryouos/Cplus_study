@@ -3,12 +3,12 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>C:\Program Files\MySQL\MySQL Server 8.0\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <ReferencePath>C:\Program Files\MySQL\MySQL Server 8.0\lib;$(VC_ReferencesPath_x64);</ReferencePath>
+    <IncludePath>C:\Program Files\MySQL\MySQL Server 8.0\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\jsoncpp\include</IncludePath>
+    <ReferencePath>C:\Program Files\MySQL\MySQL Server 8.0\lib;$(VC_ReferencesPath_x64);C:\jsoncpp\lib</ReferencePath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
-      <AdditionalDependencies>C:\Program Files\MySQL\MySQL Server 8.0\lib\libmysql.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\Program Files\MySQL\MySQL Server 8.0\lib\libmysql.lib;$(CoreLibraryDependencies);jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />
