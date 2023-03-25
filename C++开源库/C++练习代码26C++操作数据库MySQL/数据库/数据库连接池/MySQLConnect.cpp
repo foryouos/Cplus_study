@@ -1,24 +1,31 @@
 #include "MySQLConnect.h"
 
+//释放结果集空间
 void MySqlConnect::freeResult()
 {
 	if (m_result)
 	{
+		//释放数据库连接
 		mysql_free_result(m_result);
+		//将数据库指针置空
 		m_result = nullptr;
 	}
 }
-
+//连接MySQL数据库
 MySqlConnect::MySqlConnect()
 {
+	//初始化MySQL
 	m_conn = mysql_init(nullptr);
+	//设置MySQL的格式字符utf8
 	mysql_set_character_set(m_conn, "utf8");
 }
-
+//MySQL的析构函数
 MySqlConnect::~MySqlConnect()
 {
+	//如果连接不为空
 	if (m_conn != nullptr)
 	{
+		//关闭MySQL连接
 		mysql_close(m_conn);
 	}
 	freeResult();
@@ -36,10 +43,19 @@ bool MySqlConnect::connect(string user, string passwd, string dbName, string ip,
 bool MySqlConnect::update(string sql)
 {
 	//query执行成功返回0
-	if (mysql_query(m_conn, sql.c_str()))
+	try
 	{
-		return false;
-	};
+		if (mysql_query(m_conn, sql.c_str()))
+		{
+			throw invalid_argument("执行语句插入/更新/删除失败!请检查数据库");
+			return false;
+		};
+	}
+	catch (exception& e)
+	{
+		cout << e.what() << endl;
+	}
+	
 
 	return true;
 }
@@ -49,11 +65,20 @@ MySqlConnect::query(string sql)
 {
 	freeResult();
 	//query执行成功返回0
-	if (mysql_query(m_conn, sql.c_str()))
+	try
 	{
-		return false;
-	};
-	m_result = mysql_store_result(m_conn);
+		if (mysql_query(m_conn, sql.c_str()))
+		{
+			throw invalid_argument("查询数据库失败!");
+			return false;
+		};
+		m_result = mysql_store_result(m_conn);
+	}
+	catch (exception& e)
+	{
+		cout << e.what() << endl;
+	}
+	
 	return true;
 }
 
@@ -64,7 +89,12 @@ bool MySqlConnect::next()
 	{
 		//保存着当前字段的所有列的数值
 		m_row = mysql_fetch_row(m_result);
-		return true;
+		//如果字段不为空
+		if (m_row != nullptr)
+		{
+			return true;
+		}
+		
 	}
 	return false;
 }
@@ -96,4 +126,17 @@ bool MySqlConnect::commit()
 bool MySqlConnect::rollback()
 {
 	return mysql_rollback(m_conn);//bool类型，函数成功返回TRUE，失败返回FALSE
+}
+//刷新起始空闲时间
+void MySqlConnect::refreshAliveTime()
+{
+	m_alivetime = steady_clock::now();
+}
+
+long long MySqlConnect::getAliveTime()
+{
+	nanoseconds res = steady_clock::now() - m_alivetime;
+	//将纳秒转换为毫秒
+	milliseconds millsec = duration_cast<milliseconds>(res);
+	return millsec.count();
 }

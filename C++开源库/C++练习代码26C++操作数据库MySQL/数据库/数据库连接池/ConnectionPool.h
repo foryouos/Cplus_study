@@ -7,6 +7,7 @@
 #include <mutex> //C++独占的互斥锁
 #include <condition_variable> //引用C++条件变量
 using namespace std;
+//连接池
 class ConnectionPool
 {
 public:
@@ -16,12 +17,17 @@ public:
 	ConnectionPool(const ConnectionPool& obj) = delete;
 	//移动赋值函数重载，删除掉，防止对象的复制
 	ConnectionPool& operator =(const ConnectionPool& obj)= delete;
+	//获取连接时返回一个可用的连接,返回共享的智能指针
+	shared_ptr<MySqlConnect> getConnection();
+	//析构函数
+	~ConnectionPool();
 private:
 	ConnectionPool();
 	//解析JSON文件的函数
 	bool paraseJsonFile();
 	//用来生产数据库连接
-	void prodeceConnection();
+	void produceConnection();
+	
 	//用来销毁数据库连接 回收数据库连接
 	void recycleConnection();
 	//添加连接
@@ -39,8 +45,9 @@ private:
 	string m_dbName;
 	//数据库访问端口
 	unsigned short m_port;
-	//设置连接上限和下限
+	//设置连接上限
 	int m_minSize;
+	//设置连接的上限
 	int m_maxSize;
 
 	//设置线程等待最大时长,单位毫秒
