@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Cstudy\C++练习\Cmake\CMaketest\add.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Cstudy\C++练习\Cmake\CMaketest\div.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Cstudy\C++练习\Cmake\CMaketest\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Cstudy\C++练习\Cmake\CMaketest\mult.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Cstudy\C++练习\Cmake\CMaketest\sub.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Cstudy\C++练习\Cmake\CMaketest\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C616CCA8-3D4E-31EC-B0EC-120CB010053A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
