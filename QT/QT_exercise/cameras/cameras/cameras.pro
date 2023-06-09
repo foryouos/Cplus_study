@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2023-06-03T05:14:27
+# Project created by QtCreator 2023-06-06T15:44:23
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Input
+TARGET = cameras
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -26,16 +26,13 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        widget.cpp \
-    my_control.cpp
+        mainwindow.cpp
 
 HEADERS += \
-        widget.h \
-    my_control.h
+        mainwindow.h
 
 FORMS += \
-        widget.ui \
-    my_control.ui
+        mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

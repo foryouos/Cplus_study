@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2023-06-03T05:14:27
+# Project created by QtCreator 2023-06-06T19:37:41
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Input
+TARGET = untitled
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -26,18 +26,24 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        widget.cpp \
-    my_control.cpp
+        mainwindow.cpp \
+    camera.cpp
 
 HEADERS += \
-        widget.h \
-    my_control.h
+        mainwindow.h \
+    camera.h
 
 FORMS += \
-        widget.ui \
-    my_control.ui
+        mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+# 引入OpenCV
+INCLUDEPATH += D:\Qt\build\install\include\
+               D:\Qt\build\install\include\opencv2\
+               D:\Qt\build\install\include\opencv
+
+LIBS += -L D:\Qt\build\install\x64\mingw\lib\libopencv_*.a
